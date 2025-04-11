@@ -2,28 +2,37 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        TaskManager task = new TaskManager();
 
 
-            int[] grades = {85, 90, 78, 92, 88};
-
-            GradeManager gm = new GradeManager();
-
-            gm.printGrades(grades);
-
-            gm.sortGrades(grades);
-            gm.printGrades(grades);
-
-            int result = gm.searchGrade(grades, 88);
-            if (result != -1) {
-                System.out.println("Grade 88 found at index: " + result);
-            } else {
-                System.out.println("Grade not found.");
-            }
-
-            gm.getGrade(grades, 2);
+        task.addTask("Do homework");
+        task.addTask("");
+        task.addTask("Write report");
 
 
-            gm.getGrade(grades, 10);
-        }
+        task.showTasks();
+
+
+        task.sortTasks();
+        task.showTasks();
+
+        task.searchTask("Do homework");
+        task.searchTask("Cook dinner");
+
+
+        task.removeTask("Write report");
+        task.removeTask("Go jogging");
+
+
+        task.longestTask();
+
+
+        task.getTask(0);
+        task.getTask(5);
     }
+}
+
+
+
+
 
